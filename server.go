@@ -143,13 +143,13 @@ type Server struct {
 }
 
 // HandleType adds given type definitions in the list of the types.
-func (s *Server) AddType(typedef ...TypeDef) *Server {
+func (s *Server) HandleType(typedef ...TypeDef) *Server {
 	s.Types = append(s.Types, typedef...)
 	return s
 }
 
 // HandleQuery adds given function definition in the list of queries.
-func (s *Server) AddQuery(name string, fn interface{}) *Server {
+func (s *Server) HandleQuery(name string, fn interface{}) *Server {
 	s.Queries = append(s.Queries, NewFunc(name, fn))
 	return s
 }

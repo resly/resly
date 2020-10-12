@@ -66,6 +66,11 @@ add "&raw" to the end of the URL within a browser.
 	<script>
 	window.addEventListener('load', function (event) {
 		GraphQLPlayground.init(document.getElementById('root'), {
+			settings: {
+				"editor.theme": "light",
+				"schema.polling.enable": false,
+				"schema.disableComments": true
+			},
 			endpoint: {{ .Endpoint }},
 			setTitle: true
 		})
